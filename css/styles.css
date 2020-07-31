@@ -50,6 +50,9 @@
 .section {
     padding-bottom: 94px;
 }
+.img {
+    display: block;
+}
 /* Контейнер */
 .container {
     width: 1170px;
@@ -470,6 +473,10 @@ margin-right: 8px;
     letter-spacing: 0.03em;
     background: var(--background-team-color);
     color: var(--main-titel-color);
+
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-name:hover,
 .button-name:focus {
@@ -477,6 +484,11 @@ margin-right: 8px;
    color: var(--secondary-titel-color);
 }
 /* Галерея портфолио */
+.project-link {
+    display: block;
+    text-decoration: none;
+}
+
 .project-list {
     display: flex;
     flex-wrap: wrap;
@@ -494,6 +506,7 @@ margin-right: 8px;
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 
     0px 1px 1px  rgba(0, 0, 0, 0.12);
 }
+
 .project-item:nth-child(3n) {
     margin-right: 0;
 }
@@ -528,12 +541,35 @@ margin-right: 8px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.project-item:hover .project-text {
+    transform: translateY(0);
+    
+}
 .project-text {
-    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+    height: 100%;
+    padding-top: 63px;
+    padding-bottom: 63px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+
     font-size: 18px;
     line-height: 1.55;
     letter-spacing: 0.03em;
     color: var(--secondary-titel-color);
+    background-color: var(--akcent-color);
+
+    transition: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .project-text:hover {
     background: rgba(33, 150, 243, 0.9);
